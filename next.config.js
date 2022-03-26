@@ -1,4 +1,7 @@
 module.exports = {
-  target: 'serverless',
-  basePath: ""
+  basePath: "",
+  images: {
+    domains: ['freight.cargo.site'],
+    loader: "custom"
+  }
 }

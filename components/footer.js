@@ -1,3 +1,3 @@
 export default function Footer({ children }) {
-    return <div className='footer'>Site by <a href="https://github.com/brendan-holmes">Brendan</a></div>
+    return <div className='footer'><a href="https://github.com/brendan-holmes">Site by Brendan</a></div>
 }
