@@ -6,7 +6,9 @@ export default function Contact() {
       <Head>
         <title>stelo - contact</title>
       </Head>
-      <h1>contact</h1>
+      <p>For enquiries regarding your event, wedding, or any other opportunity to work together, please send us an email at</p>
+      <p><a href="mailto:turco.simona@gmail.com">turco.simona@gmail.com</a></p>
+      <p><a href="https://www.instagram.com/stelo.studio/">Instagram</a></p>
     </div>
   )
 };

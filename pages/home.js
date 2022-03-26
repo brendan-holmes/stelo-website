@@ -6,7 +6,7 @@ export default function Index() {
       <Head>
         <title>stelo</title>
       </Head>
-      <h1>stelo</h1>
+      <p>[Photo placeholder]</p>
     </div>
   )
 }

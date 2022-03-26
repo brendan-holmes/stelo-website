@@ -7,7 +7,7 @@ export default function Index() {
       <Head>
         <title>stelo</title>
       </Head>
-      <h1>[Landing page]</h1>
+      <p>[Landing page]</p>
     </div>
   )
 }

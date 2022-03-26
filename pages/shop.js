@@ -6,7 +6,9 @@ export default function Shop() {
       <Head>
         <title>stelo - shop</title>
       </Head>
-      <h1>shop</h1>
+      <p>To order bespoke bouquets for delivery or pick-up, please contact turco.simona@gmail.com with your budget and a brief description of what you would like.</p>
+      <p>We operate with contactless delivies in and around Melbourne.
+      Availability is dependant on which flowers are in season. </p>
     </div>
   )
 };

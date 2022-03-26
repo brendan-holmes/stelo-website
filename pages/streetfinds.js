@@ -6,7 +6,7 @@ export default function StreetFinds() {
       <Head>
         <title>stelo - street finds</title>
       </Head>
-      <h1>street finds</h1>
+      <p>under construction...</p>
     </div>
   )
 };

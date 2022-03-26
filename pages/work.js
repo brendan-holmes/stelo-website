@@ -6,7 +6,7 @@ export default function Work() {
       <Head>
         <title>stelo - work</title>
       </Head>
-      <h1>work</h1>
+      <p>[Photo gallery placeholder]</p>
     </div>
   )
 };
