@@ -9,11 +9,23 @@ const navbarItems = [
     },
     {
         label: "shop",
+        path: "/shop",
+    },
+    {
+        label: "",
+        path: ""
+    },
+    {
+        label: "contact",
         path: "/contact",
     },
     {
         label: "instagram",
         path: "/instagram",
+    },
+    {
+        label: "",
+        path: ""
     },
     {
         label: "+street finds",

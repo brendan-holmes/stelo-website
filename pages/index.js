@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import '../styles/index.module.css';
 
 export default function Index() {
   return (
@@ -8,7 +7,7 @@ export default function Index() {
       <Head>
         <title>stelo</title>
       </Head>
-      <Link href="./home"><a><h1>stelo</h1></a></Link>
+      <h1>[Landing page]</h1>
     </div>
   )
 }
