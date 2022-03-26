@@ -1,4 +1,5 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import '../styles/about.module.css';
 
 export default function Home() {
   return (
@@ -9,4 +10,4 @@ export default function Home() {
       <h1>About</h1>
     </div>
   )
-}
+};

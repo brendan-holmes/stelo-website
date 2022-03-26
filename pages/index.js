@@ -1,6 +1,6 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import "../styles/Home.module.css"
+import Head from 'next/head';
+import Link from 'next/link';
+import '../styles/home.module.css';
 
 export default function Home() {
   return (
