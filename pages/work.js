@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import PhotoGallery from '../components/photoGallery';
+import images from '../config/work-images'
 
 export default function Work() {
   return (
@@ -6,7 +8,7 @@ export default function Work() {
       <Head>
         <title>stelo - work</title>
       </Head>
-      <p>[Photo gallery placeholder]</p>
+      <PhotoGallery images={images}/>
     </div>
   )
 };
