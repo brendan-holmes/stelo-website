@@ -12,8 +12,8 @@ export default function PhotoGallery(props) {
                             key={image.src}
                             alt="about-image"
                             src={image.src} 
-                            width={900}
-                            height={1350}
+                            width={500}
+                            height={809}
                             loader={imageLoader} 
                             />
                     )

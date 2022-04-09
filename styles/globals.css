@@ -130,3 +130,7 @@ p {
     grid-template-columns: 1fr;
   }
 }
+
+img {
+  object-fit: cover;
+}
