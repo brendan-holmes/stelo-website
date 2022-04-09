@@ -12,25 +12,9 @@ const navbarItems = [
         path: "/shop",
     },
     {
-        label: "",
-        path: ""
-    },
-    {
         label: "contact",
         path: "/contact",
-    },
-    {
-        label: "instagram",
-        path: "/instagram",
-    },
-    {
-        label: "",
-        path: ""
-    },
-    {
-        label: "+street finds",
-        path: "/streetfinds",
-    },
+    }
 ]
 
 export default navbarItems
