@@ -102,6 +102,32 @@ p {
   flex-direction: row;
 }
 
+.text-with-image > .text-area {
+  padding: 1vw;
+  width: 50%;
+}
+
+.text-with-image > .image-area {
+  width: 50%;
+  padding: 1vw;
+}
+
+@media (max-width: 600px){
+  .text-with-image {
+    flex-direction: column;
+  }
+
+  .text-with-image > .text-area {
+    padding: 1vw;
+    width: 100%;
+  }
+  
+  .text-with-image > .image-area {
+    width: 100%;
+    padding: 1vw;
+  }
+}
+
 .photo-gallery {
   display: grid;
   grid-gap: 1rem;
