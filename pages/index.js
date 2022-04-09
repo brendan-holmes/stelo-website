@@ -7,7 +7,9 @@ export default function Index() {
       <Head>
         <title>stelo</title>
       </Head>
-      <p>[Landing page]</p>
+      <div className='landing-page-title'>
+          <Link href="/home"><a><h1>stelo</h1></a></Link>
+      </div>
     </div>
   )
 }

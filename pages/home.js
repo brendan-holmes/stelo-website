@@ -1,12 +1,15 @@
 import Head from 'next/head';
+import Layout from '../components/layout';
 
 export default function Index() {
   return (
-    <div>
-      <Head>
-        <title>stelo</title>
-      </Head>
-      <p>[Photo placeholder]</p>
-    </div>
+    <Layout>
+      <div>
+        <Head>
+          <title>stelo</title>
+        </Head>
+        <p>[Photo placeholder]</p>
+      </div>
+    </Layout>
   )
 }
