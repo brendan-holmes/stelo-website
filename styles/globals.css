@@ -141,3 +141,8 @@ img {
   align-items: center;
   height: 100vh;
 }
+
+.home-image-container {
+  display: flex;
+  justify-content: center;
+}
