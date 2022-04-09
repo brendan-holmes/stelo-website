@@ -43,6 +43,7 @@ p {
 .main-container {
   display: flex;
   flex: 1;
+  flex-wrap: wrap;
 
   /* Troubleshooting */
   /* background-color: blue; */
@@ -57,6 +58,18 @@ p {
 
 .navbar-area {
   order: -1;
+  padding-right: 2vw;
+  margin-bottom: 2vh;
+
+  /* Troubleshooting */
+  /* background-color: lightblue; */
+  /* border: 1px solid black; */
+}
+
+@media (max-width: 600px){
+  .main-container {
+    flex-direction: column;
+  }
 }
 
 .brand-title {
@@ -73,14 +86,6 @@ p {
   
   /* Troubleshooting */
   /* background-color: red; */
-  /* border: 1px solid black; */
-}
-
-.navbar-area {
-  padding-right: 2vw;
-
-  /* Troubleshooting */
-  /* background-color: lightblue; */
   /* border: 1px solid black; */
 }
 
