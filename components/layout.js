@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export default function Layout({ children }) {
     return (
-        <div className='page-container'>
+        <div className='page-container flower-background'>
             <div className='brand-title'>
                 <Link href="/home"><a><h1>stelo</h1></a></Link>
             </div>
