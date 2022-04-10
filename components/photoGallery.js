@@ -1,8 +1,7 @@
 import Image from 'next/image'
 import { useState } from 'react'
 import imageLoader from '../components/imageLoader'
-import PhotoGalleryViewer from './PhotoGalleryViewer'
-
+import PhotoGalleryViewer from '../components/photoGalleryViewer'
 
 export default function PhotoGallery(props) {
     const [showViewer, setShowViewer] = useState(false)
