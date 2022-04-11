@@ -33,7 +33,9 @@ export default function PhotoGallery(props) {
                 </div>
                 <PhotoGalleryViewer 
                     show={showViewer} 
-                    src={viewerSrc} 
+                    src={viewerSrc}
+                    setSrc={setViewerSrc}
+                    images={images}
                     setShowViewer={setShowViewer}
                 />
             </>
