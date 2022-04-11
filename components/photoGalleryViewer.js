@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { useState } from 'react'
 import imageLoader from '../components/imageLoader'
 
 const PhotoGalleryViewer = (props) => {
@@ -14,7 +13,6 @@ const PhotoGalleryViewer = (props) => {
             const nextImageIndex = currIndex + 1 >= props.images.length ? 0 : currIndex + 1
             props.setSrc(props.images[nextImageIndex].src);
         }
-        // else error
     }
 
     const handleClose = () => {
@@ -27,7 +25,6 @@ const PhotoGalleryViewer = (props) => {
             const previousImageIndex = currIndex - 1 < 0 ? props.images.length - 1 : currIndex - 1
             props.setSrc(props.images[previousImageIndex].src);
         }
-        // else error
     }
 
     if (props.show) {
@@ -45,7 +42,7 @@ const PhotoGalleryViewer = (props) => {
                 </div>
                 <Image 
                     key={props.src}
-                    alt="photo-gallery-viewer-image"
+                    alt={props.src}
                     src={props.src} 
                     width={500}
                     height={809}
