@@ -8,7 +8,8 @@ const PhotoGalleryViewer = (props) => {
         return props.images.findIndex(image => image.src === props.src);
     }
 
-    const handleOnNextClick = () => {
+    const handleNextClick = (event) => {
+        event.stopPropagation();
         const currIndex = getCurrImageIndex()
         if (currIndex >= 0) {
             const nextImageIndex = currIndex + 1 >= props.images.length ? 0 : currIndex + 1
@@ -16,16 +17,21 @@ const PhotoGalleryViewer = (props) => {
         }
     }
 
-    const handleClose = () => {
-        props.setShowViewer(false)
-    }
-    
-    const handleOnPreviousClick = () => {
+    const handlePreviousClick = (event) => {
+        event.stopPropagation();
         const currIndex = getCurrImageIndex()
         if (currIndex >= 0) {
             const previousImageIndex = currIndex - 1 < 0 ? props.images.length - 1 : currIndex - 1
             props.setSrc(props.images[previousImageIndex].src);
         }
+    }
+
+    const handleClose = () => {
+        props.setShowViewer(false)
+    }
+
+    const handleImageClick = (event) => {
+        event.stopPropagation();
     }
 
     const inputRef = useRef(null);
@@ -43,9 +49,9 @@ const PhotoGalleryViewer = (props) => {
         const ESC_KEYCODE = 27
         
         if (e.keyCode === RIGHT_ARROW_KEYCODE) {
-            handleOnNextClick()
+            handleNextClick()
         } else if (e.keyCode === LEFT_ARROW_KEYCODE) {
-            handleOnNextClick()
+            handleNextClick()
         } else if (e.keyCode === ESC_KEYCODE) {
             handleClose()
         }
@@ -56,13 +62,15 @@ const PhotoGalleryViewer = (props) => {
             <div className='photo-gallery-viewer unselectable'
                 ref={inputRef}
                 tabIndex={0}
-                onKeyDown={(e) => handleKeyDown(e)}>
+                onKeyDown={handleKeyDown}
+                onClick={handleClose}
+                >
                 <div className='close-viewer-button-container'>
                     <div className='circle' onClick={handleClose}>
                         <span className='close-viewer-button'>×</span>
                     </div>
                 </div>
-                <div className='next-image-overlay'  onClick={handleOnNextClick}>
+                <div className='next-image-overlay'  onClick={handleNextClick}>
                     <div className='circle'>
                         <span className='next-image-button'>﹥</span>
                     </div>
@@ -74,8 +82,9 @@ const PhotoGalleryViewer = (props) => {
                     width={500}
                     height={809}
                     loader={imageLoader}
+                    onClick={handleImageClick}
                     />
-                <div className='previous-image-overlay' onClick={handleOnPreviousClick}>
+                <div className='previous-image-overlay' onClick={handlePreviousClick}>
                     <div className='circle'>
                         <span className='previous-image-button'>﹤</span>
                     </div>
