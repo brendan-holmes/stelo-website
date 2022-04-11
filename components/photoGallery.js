@@ -16,7 +16,7 @@ export default function PhotoGallery(props) {
     if (images && Array.isArray(images) && images.length >= 1) {
         return (
             <>
-                <div className='photo-gallery'>
+                <div className='photo-gallery unselectable'>
                     {images.map(
                         image => (
                             <Image 
