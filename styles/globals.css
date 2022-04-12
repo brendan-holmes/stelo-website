@@ -1,5 +1,5 @@
 * {
-  cursor: url("https://files.cargocollective.com/c1141983/Webp.net-resizeimage--3-.png"), auto !important;
+  cursor: url("https://stelo-studio.s3.ap-southeast-2.amazonaws.com/cursor/Cursor.png"), auto !important;
 }
 
 html,
@@ -40,7 +40,7 @@ h1 {
   font-family: 'solide-mirage-mono';
   font-weight: normal;
   font-style: normal;
-  src: url('https://files.cargocollective.com/c1139394/Solide_Mirage-Mono_web.woff') format('woff');
+  src: url('https://stelo-studio.s3.ap-southeast-2.amazonaws.com/fonts/Solide_Mirage-Mono_web.woff') format('woff');
 }
 
 p {
@@ -56,7 +56,7 @@ p {
 }
 
 .flower-background {
-  background-image: url("https://freight.cargo.site/w/2500/q/75/i/cd6b33fd1d1bc6104aa19e06d7b088fcac441b17ffab8741470a4f34824dc2b0/IMG_04941.PNG");
+  background-image: url("https://stelo-studio.s3.ap-southeast-2.amazonaws.com/background/Background.PNG");
   background-size: cover;
   background-position: center;
 }

@@ -18,8 +18,8 @@ export default function Contact() {
           </div>
           <div className='image-area'>
             <Image 
-              alt="about-image"
-              src="/w/900/q/75/i/5aed332ee0882a5ca84e7c7c1061e52b41c965354ab73369262c830ed3a8b072/IMG_3878.JPG" 
+              alt="contact-image"
+              src="contact/Contact.jfif" 
               width={900}
               height={1350}
               loader={imageLoader} 

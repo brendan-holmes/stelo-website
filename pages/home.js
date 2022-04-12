@@ -17,7 +17,7 @@ export default function Index() {
                 image => (
                   <Image 
                     key={image.src}
-                    alt="about-image"
+                    alt="home-image"
                     src={image.src} 
                     width={500}
                     height={809}

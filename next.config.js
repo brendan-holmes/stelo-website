@@ -1,7 +1,7 @@
 module.exports = {
   basePath: "",
   images: {
-    domains: ['freight.cargo.site'],
+    domains: ['stelo-studio.s3.ap-southeast-2.amazonaws.com'],
     loader: "custom"
   }
 }

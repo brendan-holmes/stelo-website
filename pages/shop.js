@@ -18,8 +18,8 @@ export default function Shop() {
           </div>
           <div className='image-area'>
             <Image 
-              alt="about-image"
-              src="/w/1500/q/75/i/769a49262c141fa62e82eeabf6e10d1acc5781eeca252cac5271fec940003fb4/IMG_9342.JPEG" 
+              alt="shop-image"
+              src="shop-photo-gallery/shop-1/Shop-1.jfif" 
               width={900}
               height={1350}
               loader={imageLoader} 

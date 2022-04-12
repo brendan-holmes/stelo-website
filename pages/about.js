@@ -21,7 +21,7 @@ export default function About() {
           <div className='image-area'>
             <Image 
               alt="about-image"
-              src="/w/900/q/75/i/4a63b13fee94805e383c7d6129013979390f71da7f488395cb74a49889803675/IMG_0402.JPG" 
+              src="about/About.jfif" 
               width={900}
               height={1350}
               loader={imageLoader} 
