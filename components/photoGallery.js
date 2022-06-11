@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import imageLoader from '../components/imageLoader'
 import PhotoGalleryViewer from '../components/photoGalleryViewer'
+import rgbDataURL from '../components/rgbDataURL'
 
 export default function PhotoGallery(props) {
     const [showViewer, setShowViewer] = useState(false)
@@ -23,13 +24,13 @@ export default function PhotoGallery(props) {
                             key={image.src}
                             alt={image.src}
                             src={image.src} 
+                            placeholder="blur"
+                            blurDataURL={rgbDataURL(230, 230, 230)}
                             width={500}
                             height={809}
                             loader={imageLoader} 
                             onClick={(e) => handleImageClick(image.src, e)}
-                            />
-                            )
-                            )}
+                            />))}
                 </div>
                 <PhotoGalleryViewer 
                     show={showViewer} 
