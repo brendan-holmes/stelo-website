@@ -1,3 +1,5 @@
+import s3Url from '../config/aws.js';
+
 export default function imageLoader({ src }) {
-    return `https://stelo-studio.s3.ap-southeast-2.amazonaws.com/${src}`;
+    return `${s3Url}/${src}`;
 }
