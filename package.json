@@ -10,6 +10,7 @@
     "getcontent": "babel-node helpers/getcontent.js install"
   },
   "dependencies": {
+    "@babel/core": "^7.18.5",
     "@babel/preset-react": "^7.17.12",
     "contentful": "^9.1.32",
     "next": "12.1.6",
