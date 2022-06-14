@@ -1,11 +1,10 @@
 import Head from 'next/head';
 import Layout from '../components/layout';
 import Image from 'next/image'
-import images from '../config/home-images'
 import imageLoader from '../components/imageLoader'
+import homePage from '../data/homePage.json'
 
 export default function Index() {
-  if (images && Array.isArray(images) && images.length >= 1) {
     return (
       <Layout>
         <div>
@@ -13,24 +12,16 @@ export default function Index() {
             <title>stelo</title>
           </Head>
           <div className='home-image-container'>
-              {images.map(
-                image => (
-                  <Image 
-                    key={image.src}
-                    alt="home-image"
-                    src={image.src} 
-                    width={500}
-                    height={809}
-                    loader={imageLoader} 
-                    />
-                )
-              )}
+            <Image 
+              key={homePage.image.fields.file.url}
+              alt={homePage.image.fields.title}
+              src={homePage.image.fields.file.url} 
+              width={homePage.image.fields.file.details.image.width} //500
+              height={homePage.image.fields.file.details.image.height} //809
+              loader={imageLoader} 
+              />
           </div>
         </div>
       </Layout>
     )
   }
-  else {
-    return null;
-  }
-}

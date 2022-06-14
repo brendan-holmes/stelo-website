@@ -36,6 +36,10 @@ h1 {
   font-family: "solide-mirage-mono";
 }
 
+p {
+  white-space: pre-line
+}
+
 @font-face {
   font-family: 'solide-mirage-mono';
   font-weight: normal;

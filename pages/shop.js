@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import imageLoader from '../components/imageLoader'
 import Layout from '../components/layout'
+import shopPage from '../data/shopPage'
 
 export default function Shop() {
   return (
@@ -12,16 +13,15 @@ export default function Shop() {
         </Head>
         <div className='text-with-image'>
           <div className='text-area'>
-            <p>To order bespoke bouquets for delivery or pick-up, please contact turco.simona@gmail.com with your budget and a brief description of what you would like.</p>
-            <p>We operate with contactless delivies in and around Melbourne.
-            Availability is dependant on which flowers are in season. </p>
+            <p>{shopPage.shopText}</p>
           </div>
           <div className='image-area'>
             <Image 
-              alt="shop-image"
-              src="shop-photo-gallery/shop-1/Shop-1.jfif" 
-              width={900}
-              height={1350}
+              key={shopPage.shopImage.fields.file.url}
+              alt={shopPage.shopImage.fields.title}
+              src={shopPage.shopImage.fields.file.url} 
+              width={shopPage.shopImage.fields.file.details.image.width}
+              height={shopPage.shopImage.fields.file.details.image.height}
               loader={imageLoader} 
               />
           </div>

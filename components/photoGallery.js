@@ -21,15 +21,15 @@ export default function PhotoGallery(props) {
                     {images.map(
                         image => (
                             <Image 
-                            key={image.src}
-                            alt={image.src}
-                            src={image.src} 
+                            key={image.fields.file.url}
+                            alt={image.fields.file.url}
+                            src={image.fields.file.url} 
                             placeholder="blur"
                             blurDataURL={rgbDataURL(230, 230, 230)}
-                            width={500}
-                            height={809}
+                            width={image.fields.file.details.image.width}
+                            height={image.fields.file.details.image.height}
                             loader={imageLoader} 
-                            onClick={(e) => handleImageClick(image.src, e)}
+                            onClick={(e) => handleImageClick(image.fields.file.url, e)}
                             />))}
                 </div>
                 <PhotoGalleryViewer 
