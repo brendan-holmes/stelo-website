@@ -28,9 +28,9 @@ const PhotoGalleryViewer = (props) => {
         const ESC_KEYCODE = 27
         
         if (e.keyCode === RIGHT_ARROW_KEYCODE) {
-            props.handleNextClick()
+            props.handleNextClick(e)
         } else if (e.keyCode === LEFT_ARROW_KEYCODE) {
-            props.handlePreviousClick()
+            props.handlePreviousClick(e)
         } else if (e.keyCode === ESC_KEYCODE) {
             props.handleClose()
         }
@@ -49,7 +49,7 @@ const PhotoGalleryViewer = (props) => {
                         <span className='close-viewer-button'>×</span>
                     </div>
                 </div>
-                <div className='next-image-overlay'  onClick={props.handleNextClick}>
+                <div className='next-image-overlay'  onClick={event => props.handleNextClick(event)}>
                     <div className='circle'>
                         <span className='next-image-button'>﹥</span>
                     </div>
@@ -62,7 +62,7 @@ const PhotoGalleryViewer = (props) => {
                     height={props.image.fields.file.details.image.height}
                     onClick={handleImageClick}
                     />
-                <div className='previous-image-overlay' onClick={props.handlePreviousClick}>
+                <div className='previous-image-overlay' onClick={event => props.handlePreviousClick(event)}>
                     <div className='circle'>
                         <span className='previous-image-button'>﹤</span>
                     </div>

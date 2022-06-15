@@ -18,7 +18,7 @@ export default function PhotoGallery(props) {
     }
 
     const handleViewerNextClick = (event) => {
-        //event.stopPropagation();
+        event.stopPropagation();
         const currIndex = getViewerCurrImageIndex()
         if (currIndex >= 0) {
             const nextImageIndex = currIndex + 1 >= images.length ? 0 : currIndex + 1
@@ -27,7 +27,7 @@ export default function PhotoGallery(props) {
     }
 
     const handleViewerPreviousClick = (event) => {
-        //event.stopPropagation();
+        event.stopPropagation();
         const currIndex = getViewerCurrImageIndex()
         if (currIndex >= 0) {
             const previousImageIndex = currIndex - 1 < 0 ? images.length - 1 : currIndex - 1
