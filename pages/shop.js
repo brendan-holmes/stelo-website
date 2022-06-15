@@ -1,6 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import imageLoader from '../components/imageLoader'
+import Image from '../components/image'
 import Layout from '../components/layout'
 import shopPage from '../data/shopPage'
 
@@ -22,7 +21,6 @@ export default function Shop() {
               src={shopPage.shopImage.fields.file.url} 
               width={shopPage.shopImage.fields.file.details.image.width}
               height={shopPage.shopImage.fields.file.details.image.height}
-              loader={imageLoader} 
               />
           </div>
         </div>

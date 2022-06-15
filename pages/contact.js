@@ -1,6 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import imageLoader from '../components/imageLoader'
+import Image from '../components/image'
 import Layout from '../components/layout'
 import contactPage from '../data/contactPage.json'
 
@@ -23,7 +22,6 @@ export default function Contact() {
               src={contactPage.contactImage.fields.file.url} 
               width={contactPage.contactImage.fields.file.details.image.width}
               height={contactPage.contactImage.fields.file.details.image.height}
-              loader={imageLoader} 
               />
           </div>
         </div>

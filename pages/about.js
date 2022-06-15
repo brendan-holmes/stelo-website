@@ -1,6 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import imageLoader from '../components/imageLoader'
+import Image from '../components/image'
 import Layout from '../components/layout'
 import aboutPage from '../data/aboutPage.json'
 
@@ -24,7 +23,6 @@ export default function About() {
               src={aboutPage.aboutImage.fields.file.url} 
               width={aboutPage.aboutImage.fields.file.details.image.width}
               height={aboutPage.aboutImage.fields.file.details.image.height}
-              loader={imageLoader} 
               />
           </div>
         </div>

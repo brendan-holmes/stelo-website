@@ -1,43 +1,20 @@
-import Image from 'next/image'
+import Image from '../components/image'
 import { useEffect, useRef } from 'react';
-import imageLoader from '../components/imageLoader'
 
+// This component only displays a single image, as set by its parent element
+// When the next, previous or close buttons are clicked, the action is handled by the methods that are passed in by the parent element
 const PhotoGalleryViewer = (props) => {
 
-    const getCurrImageIndex = () => {
-        return props.images.findIndex(image => image.fields.file.url === props.image.fields.file.url);
-    }
-
-    const handleNextClick = (event) => {
-        event.stopPropagation();
-        const currIndex = getCurrImageIndex()
-        if (currIndex >= 0) {
-            const nextImageIndex = currIndex + 1 >= props.images.length ? 0 : currIndex + 1
-            console.log('Setting viewer image to index: ', nextImageIndex);
-            props.setImage(props.images[nextImageIndex])
-        }
-    }
-
-    const handlePreviousClick = (event) => {
-        event.stopPropagation();
-        const currIndex = getCurrImageIndex()
-        if (currIndex >= 0) {
-            const previousImageIndex = currIndex - 1 < 0 ? props.images.length - 1 : currIndex - 1
-            console.log('Setting viewer image to index: ', previousImageIndex);
-            props.setImage(props.images[previousImageIndex]);
-        }
-    }
-
-    const handleClose = () => {
-        props.setShowViewer(false)
-    }
-
     const handleImageClick = (event) => {
+        // If the user clicks outside the image, it should close the viewer
+        // However, clicking the image should do nothing
+        // If we don't stop propagation, the event will bubble up to parent element,
+        // which is the image container
         event.stopPropagation();
     }
 
+    // Used to direct the focus for key presses
     const inputRef = useRef(null);
-
     useEffect(() => {
         if (props.show) {
         inputRef.current.focus();
@@ -51,11 +28,11 @@ const PhotoGalleryViewer = (props) => {
         const ESC_KEYCODE = 27
         
         if (e.keyCode === RIGHT_ARROW_KEYCODE) {
-            handleNextClick()
+            props.handleNextClick()
         } else if (e.keyCode === LEFT_ARROW_KEYCODE) {
-            handleNextClick()
+            props.handlePreviousClick()
         } else if (e.keyCode === ESC_KEYCODE) {
-            handleClose()
+            props.handleClose()
         }
     }
 
@@ -65,14 +42,14 @@ const PhotoGalleryViewer = (props) => {
                 ref={inputRef}
                 tabIndex={0}
                 onKeyDown={handleKeyDown}
-                onClick={handleClose}
+                onClick={props.handleClose}
                 >
                 <div className='close-viewer-button-container'>
-                    <div className='circle' onClick={handleClose}>
+                    <div className='circle' onClick={props.handleClose}>
                         <span className='close-viewer-button'>×</span>
                     </div>
                 </div>
-                <div className='next-image-overlay'  onClick={handleNextClick}>
+                <div className='next-image-overlay'  onClick={props.handleNextClick}>
                     <div className='circle'>
                         <span className='next-image-button'>﹥</span>
                     </div>
@@ -83,10 +60,9 @@ const PhotoGalleryViewer = (props) => {
                     src={props.image.fields.file.url} 
                     width={props.image.fields.file.details.image.width}
                     height={props.image.fields.file.details.image.height}
-                    loader={imageLoader}
                     onClick={handleImageClick}
                     />
-                <div className='previous-image-overlay' onClick={handlePreviousClick}>
+                <div className='previous-image-overlay' onClick={props.handlePreviousClick}>
                     <div className='circle'>
                         <span className='previous-image-button'>﹤</span>
                     </div>
