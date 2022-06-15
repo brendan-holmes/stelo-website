@@ -5,7 +5,7 @@ import imageLoader from '../components/imageLoader'
 const PhotoGalleryViewer = (props) => {
 
     const getCurrImageIndex = () => {
-        return props.images.findIndex(image => image.src === props.src);
+        return props.images.findIndex(image => image.fields.file.url === props.image.fields.file.url);
     }
 
     const handleNextClick = (event) => {
@@ -13,7 +13,8 @@ const PhotoGalleryViewer = (props) => {
         const currIndex = getCurrImageIndex()
         if (currIndex >= 0) {
             const nextImageIndex = currIndex + 1 >= props.images.length ? 0 : currIndex + 1
-            props.setSrc(props.images[nextImageIndex].src);
+            console.log('Setting viewer image to index: ', nextImageIndex);
+            props.setImage(props.images[nextImageIndex])
         }
     }
 
@@ -22,7 +23,8 @@ const PhotoGalleryViewer = (props) => {
         const currIndex = getCurrImageIndex()
         if (currIndex >= 0) {
             const previousImageIndex = currIndex - 1 < 0 ? props.images.length - 1 : currIndex - 1
-            props.setSrc(props.images[previousImageIndex].src);
+            console.log('Setting viewer image to index: ', previousImageIndex);
+            props.setImage(props.images[previousImageIndex]);
         }
     }
 
@@ -76,11 +78,11 @@ const PhotoGalleryViewer = (props) => {
                     </div>
                 </div>
                 <Image 
-                    key={props.src}
-                    alt={props.src}
-                    src={props.src} 
-                    width={500}
-                    height={809}
+                    key={props.image.fields.file.url}
+                    alt={props.image.fields.file.url}
+                    src={props.image.fields.file.url} 
+                    width={props.image.fields.file.details.image.width}
+                    height={props.image.fields.file.details.image.height}
                     loader={imageLoader}
                     onClick={handleImageClick}
                     />

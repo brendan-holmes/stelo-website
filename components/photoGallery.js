@@ -6,11 +6,11 @@ import rgbDataURL from '../components/rgbDataURL'
 
 export default function PhotoGallery(props) {
     const [showViewer, setShowViewer] = useState(false)
-    const [viewerSrc, setViewerSrc] = useState('')
+    const [viewerImage, setViewerImage] = useState({})
 
     const images = props.images
-    const handleImageClick = (src, e) => {
-        setViewerSrc(src)
+    const handleImageClick = (image, e) => {
+        setViewerImage(image)
         setShowViewer(true)
     }
 
@@ -29,13 +29,13 @@ export default function PhotoGallery(props) {
                             width={image.fields.file.details.image.width}
                             height={image.fields.file.details.image.height}
                             loader={imageLoader} 
-                            onClick={(e) => handleImageClick(image.fields.file.url, e)}
+                            onClick={(e) => handleImageClick(image, e)}
                             />))}
                 </div>
                 <PhotoGalleryViewer 
                     show={showViewer} 
-                    src={viewerSrc}
-                    setSrc={setViewerSrc}
+                    image={viewerImage}
+                    setImage={setViewerImage}
                     images={images}
                     setShowViewer={setShowViewer}
                 />
