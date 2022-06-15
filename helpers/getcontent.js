@@ -32,19 +32,22 @@ export const getcontent = async () => {
     for (const type of types) {
         console.log('> Getting content for', type);
         
-        
-        const entries = await client.getEntries({
-            content_type: type,
-            include: 1
-        })
-
-        if (entries.total === 1) {
-            const { fields } = entries.items[0]
-            fs.writeFileSync(
-                path.join(dir, `${type}.json`),
-                JSON.stringify(fields)
-            )
-            console.log('> Content gotten and written for', type)
+        try {
+            const entries = await client.getEntries({
+                content_type: type,
+                include: 1
+            })
+            if (entries.total === 1) {
+                const { fields } = entries.items[0]
+                fs.writeFileSync(
+                    path.join(dir, `${type}.json`),
+                    JSON.stringify(fields)
+                )
+                console.log('> Content gotten and written for', type)
+            }
+        } catch (err) {
+            console.log(err)
+            return false
         }
     }
     return true
